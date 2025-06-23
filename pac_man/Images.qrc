@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/">
+        <file>fondo_pacman.jpg</file>
+    </qresource>
+</RCC>
