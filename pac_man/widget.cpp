@@ -12,3 +12,14 @@ Widget::~Widget()
 {
     delete ui;
 }
+
+
+
+
+void Widget::on_play_clicked()
+{
+    juego *juego = new juego;
+    close();
+    juego->show();
+}
+
