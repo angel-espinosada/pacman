@@ -18,7 +18,7 @@ Widget::~Widget()
 
 void Widget::on_play_clicked()
 {
-    juego *juego = new juego;
+    Juego *juego = new Juego;
     close();
     juego->show();
 }

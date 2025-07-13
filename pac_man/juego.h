@@ -2,6 +2,10 @@
 #define JUEGO_H
 
 #include <QWidget>
+#include<QGraphicsScene>
+#include<QGraphicsView>
+#include<QGraphicsPixmapItem>
+#include "laberinto.h"
 
 namespace Ui {
 class Juego;
@@ -17,6 +21,8 @@ public:
 
 private:
     Ui::Juego *ui;
+    QGraphicsScene *escenario;
+    QGraphicsView *visor;
 };
 
 #endif // JUEGO_H
