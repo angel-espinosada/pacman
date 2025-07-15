@@ -11,15 +11,39 @@ Juego::Juego(QWidget *parent)
     QGraphicsScene* escenario = new QGraphicsScene(this);
 
     // Creamos una vista para mostrar esa escena
-    QGraphicsView* visor = new QGraphicsView(escenario, this);
-    visor->setFixedSize(448, 496);
+
+
     escenario->setSceneRect(0, 0,448,496);
 
-    Laberinto *lab = new Laberinto();
-    escenario->addItem(lab);
+    Laberinto *lab = new Laberinto(escenario, 35);
+    ui->graphicsView->setScene(escenario);;
+    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setFrameShape(QFrame::NoFrame);
+    QVector<QVector<int>> mapa = {
+        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        {1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1},
+        {1,0,1,1,1,1,0,1,1,1,0,1,0,1,1,1,1,0,1},
+        {1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1},
+        {1,0,1,0,1,1,1,1,0,1,0,1,1,1,1,0,1,0,1},
+        {1,0,1,0,1,0,0,1,0,1,0,1,0,0,1,0,1,0,1},
+        {1,0,1,0,1,0,1,1,0,1,0,1,1,0,1,0,1,0,1},
+        {1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1},
+        {1,0,1,0,1,0,1,1,1,1,1,1,1,0,1,0,1,0,1},
+        {1,0,1,0,1,0,0,1,0,0,0,1,0,0,1,0,1,0,1},
+        {1,0,1,0,1,1,0,1,1,1,1,1,0,1,1,0,1,0,1},
+        {1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1},
+        {1,1,1,1,1,1,0,1,0,1,0,1,0,1,1,1,1,1,1},
+        {1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+    };
+
+    lab->dibujarLaberinto(mapa);
 
     // Mostramos la vista
-    visor->show();
+    QRectF contenido = escenario->itemsBoundingRect();
+    escenario->setSceneRect(contenido);
+
 }
 
 Juego::~Juego()
