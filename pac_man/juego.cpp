@@ -40,6 +40,11 @@ Juego::Juego(QWidget *parent)
 
     lab->dibujarLaberinto(mapa);
 
+    // Creamos y dibujamos los puntos/comida
+    Comida* comida = new Comida(escenario, 35);
+    comida->dibujar(mapa);
+
+
     // Mostramos la vista
     QRectF contenido = escenario->itemsBoundingRect();
     escenario->setSceneRect(contenido);

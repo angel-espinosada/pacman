@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     bloque.cpp \
+    comida.cpp \
     juego.cpp \
     laberinto.cpp \
     main.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     bloque.h \
+    comida.h \
     juego.h \
     laberinto.h \
     widget.h
