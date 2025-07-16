@@ -7,6 +7,8 @@
 #include<QGraphicsPixmapItem>
 #include "laberinto.h"
 #include "comida.h"
+#include "elementos.h"
+#include "enemigo.h"
 
 namespace Ui {
 class Juego;

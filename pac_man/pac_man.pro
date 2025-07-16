@@ -11,6 +11,8 @@ CONFIG += c++17
 SOURCES += \
     bloque.cpp \
     comida.cpp \
+    elementos.cpp \
+    enemigo.cpp \
     juego.cpp \
     laberinto.cpp \
     main.cpp \
@@ -19,6 +21,9 @@ SOURCES += \
 HEADERS += \
     bloque.h \
     comida.h \
+    elementos.h \
+    elementos.h \
+    enemigo.h \
     juego.h \
     laberinto.h \
     widget.h
@@ -36,4 +41,6 @@ RESOURCES += \
     Images.qrc
 
     imagenes.qrc \
+
+
 

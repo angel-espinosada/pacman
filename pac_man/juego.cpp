@@ -44,7 +44,11 @@ Juego::Juego(QWidget *parent)
     Comida* comida = new Comida(escenario, 35);
     comida->dibujar(mapa);
 
+    // Cargar el sprite sheet
+    Elementos* elementos = new Elementos(":/sprites/elementos.png", 32,19);
 
+    // Agregar un fantasma rojo
+    Enemigo* fantasmaRojo = new Enemigo(elementos, escenario, 5, 5); // Posición inicial (5, 5)
     // Mostramos la vista
     QRectF contenido = escenario->itemsBoundingRect();
     escenario->setSceneRect(contenido);
