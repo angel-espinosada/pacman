@@ -1,5 +1,8 @@
 #include "juego.h"
 #include "ui_juego.h"
+#include "comida.h"
+#include "elementos.h"
+#include "enemigo.h"
 
 
 Juego::Juego(QWidget *parent)
@@ -39,16 +42,16 @@ Juego::Juego(QWidget *parent)
     };
 
     lab->dibujarLaberinto(mapa);
-
     // Creamos y dibujamos los puntos/comida
     Comida* comida = new Comida(escenario, 35);
     comida->dibujar(mapa);
 
     // Cargar el sprite sheet
-    Elementos* elementos = new Elementos(":/sprites/elementos.png", 32,19);
+    Elementos* elementos = new Elementos(":/sprites/elementos.png", 30,12);
 
     // Agregar un fantasma rojo
     Enemigo* fantasmaRojo = new Enemigo(elementos, escenario, 5, 5); // Posición inicial (5, 5)
+
     // Mostramos la vista
     QRectF contenido = escenario->itemsBoundingRect();
     escenario->setSceneRect(contenido);

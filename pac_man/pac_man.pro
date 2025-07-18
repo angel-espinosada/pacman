@@ -22,7 +22,6 @@ HEADERS += \
     bloque.h \
     comida.h \
     elementos.h \
-    elementos.h \
     enemigo.h \
     juego.h \
     laberinto.h \

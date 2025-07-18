@@ -14,12 +14,13 @@ public:
     QPixmap getSprite(int row, int col) const;
 
     // Obtener todos los sprites de una fila
-    QList<QPixmap> getRowSprites(int row) const;
+    QList<QPixmap> getRowSprites(int row,int maxColumns) const;
 
 private:
     QPixmap m_spriteSheet; // El sprite sheet completo
     int m_tileSize;        // Tamaño de cada sprite
     int m_numColumns; // Guardamos numColumns como miembro de la clase
+    int m_verticalOffset;
 };
 
 #endif // ELEMENTOS_H
